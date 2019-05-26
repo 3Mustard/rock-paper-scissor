@@ -7,28 +7,31 @@
 
 <body>
 <script>
-
+//Call this  to run the game
 function playGame() {
-  let userChoice = getUserChoice(); 
-  let computerChoice = getComputerChoice()
+  let userChoice = getUserChoice(); //runs the function that gets the players choice
+  let computerChoice = getComputerChoice() //runs the function to get computer choice
   console.log(userChoice);
   console.log(computerChoice);
-  console.log(determineWinner(userChoice, computerChoice));
+  console.log(determineWinner(userChoice, computerChoice)); //runs the function to determine winner
 }
 
-function getUserChoice(){
-  var userInput = prompt("rock, paper or scissor?")
-  userInput = userInput.toLowerCase();
+// obtains the users choice
+function getUserChoice(){ 
+  var userInput = prompt("rock, paper or scissor?") //prompts the user for a selection and stores it
+  userInput = userInput.toLowerCase(); //sets the user input to all lowercase
+  //checks if the user entered a correct choice
   if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissor') {
     return userInput;
   } else {
-    console.log('Please enter either \'rock\' \'paper\' or \'scissor\'');
+    console.log('Please enter either \'rock\' \'paper\' or \'scissor\''); 
   }
 }
 
+//function to obtain computers selection  
 function getComputerChoice() {
-  let randomNumber = Math.floor(Math.random() * 3);
-  switch (randomNumber) {
+  let randomNumber = Math.floor(Math.random() * 3); //obtains a random num between 0 and 2.9 and rounds it down
+  switch (randomNumber) { //switch statement takes the random number and returns rock,paper or scissor
     case 0:
       return 'rock';
       break;
@@ -41,7 +44,9 @@ function getComputerChoice() {
   }
 }
 
+//function to determine the winner, takes the variables that were stored from the returns of getuserchoice/getcomputerchoice
 function determineWinner(userChoice, computerChoice) {
+  //if statements to determine winner
   if(userChoice === computerChoice) {
     return 'The game was a tie';
   } if(userChoice === 'rock') {
