@@ -19,7 +19,7 @@ function playGame() {
 function getUserChoice(){
   var userInput = prompt("rock, paper or scissor?")
   userInput = userInput.toLowerCase();
-  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissor') {
     return userInput;
   } else {
     console.log('Please enter either \'rock\' \'paper\' or \'scissor\'');
@@ -36,7 +36,7 @@ function getComputerChoice() {
       return 'paper';
       break;
     case 2:
-      return 'scissors';
+      return 'scissor';
       break;    
   }
 }
@@ -51,12 +51,12 @@ function determineWinner(userChoice, computerChoice) {
         return 'You have won!';
       }
   } if(userChoice === 'paper') {
-    	if(computerChoice === 'scissors') {
+    	if(computerChoice === 'scissor') {
         return 'The computer has won';
       } else {
         return 'You have won!';
       }
-  } if(userChoice === 'scissors') {
+  } if(userChoice === 'scissor') {
     	if(computerChoice === 'rock') {
         return 'The computer has won';
       } else {
