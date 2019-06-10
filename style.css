@@ -1,0 +1,16 @@
+.buttons {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+}
+
+.results {
+  text-align: center;
+}
+
+div u {
+  text-decoration: none;
+  box-shadow: inset 0 0px 0 white, inset 0 -1px 0 black;
+}

@@ -3,74 +3,32 @@
 <head>
   <meta charset="utf-8">
   <title>Rock, Paper, Scissor!</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
  </head>
 
 <body>
-<script>
-//Call this  to run the game
-function playGame() {
-  let userChoice = getUserChoice(); //runs the function that gets the players choice
-  let computerChoice = getComputerChoice() //runs the function to get computer choice
-  console.log(userChoice);
-  console.log(computerChoice);
-  console.log(determineWinner(userChoice, computerChoice)); //runs the function to determine winner
-}
-
-// obtains the users choice
-function getUserChoice(){ 
-  var userInput = prompt("rock, paper or scissor?") //prompts the user for a selection and stores it
-  userInput = userInput.toLowerCase(); //sets the user input to all lowercase
-  //checks if the user entered a correct choice
-  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissor') {
-    return userInput;
-  } else {
-    console.log('Please enter either \'rock\' \'paper\' or \'scissor\''); 
-  }
-}
-
-//function to obtain computers selection  
-function getComputerChoice() {
-  let randomNumber = Math.floor(Math.random() * 3); //obtains a random num between 0 and 2.9 and rounds it down
-  switch (randomNumber) { //switch statement takes the random number and returns rock,paper or scissor
-    case 0:
-      return 'rock';
-      break;
-    case 1:
-      return 'paper';
-      break;
-    case 2:
-      return 'scissor';
-      break;    
-  }
-}
-
-//function to determine the winner, takes the variables that were stored from the returns of getuserchoice/getcomputerchoice
-function determineWinner(userChoice, computerChoice) {
-  //if statements to determine winner
-  if(userChoice === computerChoice) {
-    return 'The game was a tie';
-  } if(userChoice === 'rock') {
-    	if(computerChoice === 'paper') {
-      	return 'The computer has won';
-      } else {
-        return 'You have won!';
-      }
-  } if(userChoice === 'paper') {
-    	if(computerChoice === 'scissor') {
-        return 'The computer has won';
-      } else {
-        return 'You have won!';
-      }
-  } if(userChoice === 'scissor') {
-    	if(computerChoice === 'rock') {
-        return 'The computer has won';
-      } else {
-        return 'You have won!';
-      }
-  }
-}
-
-</script>
+  <div class="buttons">
+    <div class="btn">
+      <button id="rock">Rock</button>
+    </div>
+    <div class="btn">
+      <button id="paper">Paper</button>
+    </div>
+    <div class="btn">
+      <button id="scissor">Scissor</button>
+    </div>
+  </div>
+  <div class="results">
+    <p id="result"></p>
+    <div>
+      <u>Your score</u>
+      <p id="playerScore">0</p>
+    </div>
+    <div>
+      <u>Computer score</u>
+      <p id="computerScore">0</p>
+    </div>
+  </div>
+<script src="script.js"></script>
 </body>
-
 </html>
